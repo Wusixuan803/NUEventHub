@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NU Innovators Meetup 2025</title>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAx4Q0NlE1RzHpPRnZ-pB_ZUOfojnEVtnw&callback=initMap"></script>   
+    <script>
+        function initMap() {
+            var map = new google.maps.Map(document.getElementById('map'), {
+                center: {lat: 37.78012, lng: -122.18345},  
+                zoom: 15
+            });
+            var bounds = new google.maps.LatLngBounds();
+            var marker = new google.maps.Marker({
+                position: {lat: 37.78012, lng: -122.18345},  
+                map: map
+            });
+            bounds.extend(marker.position);
+            map.fitBounds(bounds); 
+        }
+    </script>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <div class="logo-container">
+        <a href="/">
+            <img src="/images/logo.png" alt="NUEventHub Logo" class="logo">
+        </a>
+    </div>    
+        <h1 class="innovators-meetup-title">NU Innovators Meetup 2025</h1>
+        <div class="innovators-meetup-container">
+            <div class="innovators-meetup-event-info">
+                <p class="label">Created by:</p>
+                <p>Northeastern University Student Union</p>
+                <p class="label">Location:</p>
+                <p>Lucie Stern Hall, Northeastern University Oakland Campus, 5000 MacArthur Blvd, Oakland, CA 94613</p>
+                <p class="label">Date:</p>
+                <p>Monday, January 20, 2025</p>
+                <p class="label">Time:</p>
+                <p>5:00 PM - 8:00 PM</p>
+                <p class="label">Description:</p>
+                <p>Join the NU Innovators Meetup 2025 on January 20 at Northeastern University's Innovation Center, from 5:00 PM to 8:00 PM. This event is an ideal platform for students, entrepreneurs, and creatives to network, share ideas, and engage with industry leaders. Pitch your innovations, gain valuable insights, and connect with potential mentors and investors in a dynamic setting. Refreshments provided.</p>
+                <button class="innovators-meetup-join-button">Join</button>
+        </div>
+        <div id="map"></div>
+    </div>
+</body>
+</html>

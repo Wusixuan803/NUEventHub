@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Event Details - NU Event Hub</title>
+    <link rel="stylesheet" href="/css/styles.css" />
+  </head>
+  <body>
+    <header>
+      <div class="header-container">
+        <a href="/"
+          ><img src="/images/logo.png" alt="NUEventHub Logo" class="logo"
+        /></a>
+        <nav>
+          <ul>
+            <li><a href="/about">About</a></li>
+            <li><a href="/create_events">Create Event</a></li>
+            <li><a href="/manage-events">Manage Events</a></li>
+            <li><a href="/tickets">Tickets</a></li>
+            <li><a href="/login">Login</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <div class="event-details">
+        <h1 id="eventTitle">Event Title</h1>
+        <img id="eventImage" src="" alt="Event Image" class="event-image" />
+        <p id="eventDate" class="event-date">Event Date</p>
+        <p id="eventTime" class="event-time">Event Time</p>
+        <p id="eventLocation" class="event-location">Event Location</p>
+        <div class="event-description">
+          <h2>Description</h2>
+          <p id="eventDescription">Event detailed description goes here.</p>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <p>NU Event Hub © 2024</p>
+    </footer>
+
+    <script>
+      // Extract eventId from the URL
+      const eventId = window.location.pathname.split("/").pop();
+
+      // Fetch the event details from the server
+      fetch(`/api/event/${eventId}`)
+        .then((response) => response.json())
+        .then((event) => {
+          // Fill the HTML elements with the event details
+          document.getElementById("eventTitle").innerText = event.event_title;
+          document.getElementById(
+            "eventImage"
+          ).src = `/uploads/${event.main_image}`;
+          document.getElementById("eventImage").alt = event.event_title;
+          document.getElementById(
+            "eventDate"
+          ).innerText = `${event.start_date} - ${event.end_date}`;
+          document.getElementById(
+            "eventTime"
+          ).innerText = `${event.start_time} - ${event.end_time}`;
+          document.getElementById("eventLocation").innerText = event.location;
+          document.getElementById("eventDescription").innerText =
+            event.event_description;
+        })
+        .catch((error) => {
+          console.error("Error fetching event details:", error);
+          alert("Failed to load event details.");
+        });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Log in - NU Event Hub</title>
+    <link rel="stylesheet" href="/css/styles.css" />
+    <script>
+      function toggleForms() {
+        const loginForm = document.getElementById("loginForm");
+        const signupForm = document.getElementById("signupForm");
+        const toggleText = document.getElementById("toggleText");
+        const heading = document.getElementById("heading");
+
+        if (loginForm.style.display === "none") {
+          // Switching to login form
+          loginForm.style.display = "block";
+          signupForm.style.display = "none";
+          toggleText.innerText = "Don't have an account? Sign up below!";
+          heading.innerText = "Log in";
+        } else {
+          // Switching to signup form
+          loginForm.style.display = "none";
+          signupForm.style.display = "block";
+          toggleText.innerText = "Already have an account? Log in below!";
+          heading.innerText = "Create an account";
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <header>
+      <a href="/"
+        ><img src="/images/logo.png" alt="NUEventHub Logo" class="logo"
+      /></a>
+    </header>
+    <div class="login-container">
+      <!-- Login/Sign Up Heading -->
+      <h1 id="heading">Log in or sign up</h1>
+
+      <!-- Login Form -->
+      <div id="loginForm">
+        <form action="/login" method="POST">
+          <div class="form-group">
+            <label for="email">Email address</label>
+            <input type="email" id="email" name="email" required />
+          </div>
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required />
+          </div>
+          <button type="submit" class="login-button">Log In</button>
+        </form>
+      </div>
+
+      <!-- Sign Up Form -->
+      <div id="signupForm" style="display: none">
+        <form action="/signup" method="POST">
+          <div class="form-group">
+            <label for="newEmail">Email address</label>
+            <input type="email" id="newEmail" name="email" required />
+          </div>
+          <div class="form-group">
+            <label for="newPassword">Password</label>
+            <input type="password" id="newPassword" name="password" required />
+          </div>
+          <button type="submit" class="signup-button">Sign Up</button>
+        </form>
+      </div>
+
+      <!-- Toggle Text -->
+      <p
+        id="toggleText"
+        onclick="toggleForms()"
+        style="cursor: pointer; color: blue"
+      >
+        Don't have an account? Sign up below!
+      </p>
+    </div>
+    <footer>
+      <p>NU Event Hub © 2024</p>
+  </footer>
+  </body>
+</html>

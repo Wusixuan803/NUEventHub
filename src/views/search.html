@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Results - NU Event Hub</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <a href="/"><img src="/images/logo.png" alt="NUEventHub Logo" class="logo"></a>
+            <nav>
+                <ul>
+                    <li>
+                        <form action="/search" method="get" class="search-form">
+                            <input type="text" name="query" placeholder="Search events..." required>
+                            <button type="submit">Search</button>
+                        </form>
+                    </li>
+                    <li><a href="/about">About</a></li>
+                    <li><a href="/create_events">Create Event</a></li>
+                    <li><a href="/manage-events">Manage Events</a></li>
+                    <li><a href="/contact_us">Contact Us</a></li>
+                    <li><a href="/login">Login</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="search-results">
+        <h2>Search Results: <span id="search-query"></span></h2>
+        <div class="event-grid">
+            <div class="event-container" id="no-results">
+                <p>No events found matching your search criteria.</p>
+            </div>            
+        </div>
+    </main>
+
+    <footer>
+        <p>NU Event Hub © 2024</p>
+    </footer>
+</body>
+</html>

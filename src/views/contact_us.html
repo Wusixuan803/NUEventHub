@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - NUEventHub</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <header>
+        <script>
+            window.addEventListener('DOMContentLoaded', (event) => {
+                const form = document.querySelector('.contact-form');
+                form.addEventListener('submit', function(e) {
+                    e.preventDefault(); 
+                    const formData = new FormData(form);
+            
+                    fetch('/submit-contact-form', {
+                        method: 'POST',
+                        body: formData
+                    })
+                    .then(response => response.text())
+                    .then(data => {
+                        alert('Message sent successfully!');
+                    })
+                    .catch(error => {
+                        console.error('Error:', error);
+                        alert('Error sending message.');
+                    });
+                });
+            });
+            </script>            
+    </header>
+    <a href="/">
+        <img src="/images/logo.png" alt="NUEventHub Logo" class="logo">
+    </a>
+    <main class="contact_us">
+        <h1>Contact Us</h1>
+        <p>Please fill out the form below and we will get back to you as soon as possible.</p>
+        <form action="/submit-contact-form" method="POST" class="contact-form">
+            <div class="form-group">
+                <label for="name">Your Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Your Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="message">Your Message:</label>
+                <textarea id="message" name="message" rows="6" required></textarea>
+            </div>
+            <button type="submit">Send Message</button>
+        </form>
+    </main>
+    <footer>
+        <p>NU Event Hub © 2024</p>
+    </footer>
+</body>
+</html>
+

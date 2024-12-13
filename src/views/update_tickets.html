@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Ticket Price</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <div class="logo-container">
+        <a href="/">
+            <img src="/images/logo.png" alt="NUEventHub Logo" class="logo">
+        </a>
+    </div>
+    <div class="updatecontainer">
+        <h1>Update Ticket Price for Board Game Night</h1>
+        <form action="/api/tickets/update" method="POST">
+            <label for="price">New Ticket Price (USD):</label>
+            <input type="text" id="price" name="price" value="" required>
+            <button type="submit">Update Price</button>
+        </form>
+    </div>
+    <script src="/js/script.js"></script>
+</body>
+</html>

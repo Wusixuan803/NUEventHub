@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Northeastern Annual Career Fair 2025</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <script>
+        function initMap() {
+            var map = new google.maps.Map(document.getElementById('map'), {
+                center: {lat: 37.77857, lng: -122.18253},  
+                zoom: 15
+            });
+            var bounds = new google.maps.LatLngBounds();
+            var marker = new google.maps.Marker({
+                position: {lat: 37.77857, lng: -122.18253},  
+                map: map,
+            });
+            bounds.extend(marker.position);
+            map.fitBounds(bounds); 
+        }
+    </script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAx4Q0NlE1RzHpPRnZ-pB_ZUOfojnEVtnw&callback=initMap"></script>   
+</head>
+<body>
+    <div class="logo-container">
+        <a href="/">
+            <img src="/images/logo.png" alt="NUEventHub Logo" class="logo">
+        </a>
+    </div>    
+        <h1 class="annual-career-fair-title">Northeastern Annual Career Fair 2025</h1>
+        <div class="annual-career-fair-container">
+            <div class="annual-career-fair-event-info">
+                <p class="label">Created by:</p>
+                <p>Northeastern University Student Union</p>
+                <p class="label">Location:</p>
+                <p>CPM Hall, Northeastern University Oakland Campus, 5000 MacArthur Blvd, Oakland, CA 94613</p>
+                <p class="label">Date:</p>
+                <p>Wednesday, March 5, 2025</p>
+                <p class="label">Time:</p>
+                <p>10:00 AM - 4:00 PM</p>
+                <p class="label">Description:</p>
+                <p>Join us at the Northeastern Annual Career Fair 2025, where over 100 top employers from technology, business, and non-profits gather. Discover exciting career opportunities, engage in workshops on resume building and interview skills, and connect with industry leaders. Bring your resumes and prepare to make meaningful connections that could shape your career. Don't miss out on this pivotal networking event at Northeastern!</p>
+                <button class="annual-career-fair-join-button">Join</button>
+        </div>
+        <div id="map"></div>
+    </div>
+</body>
+</html>
+

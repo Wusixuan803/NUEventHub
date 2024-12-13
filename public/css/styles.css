@@ -1,0 +1,881 @@
+/* Basic style reset */
+body,
+h1,
+h2,
+h3,
+p,
+ul,
+li,
+a {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  font-family: Arial, sans-serif;
+  box-sizing: border-box;
+}
+
+.logo {
+  width: 275px;
+  height: auto;
+  margin-left: -40px;
+}
+
+/* Page background and global styles */
+body {
+  background-color: #fff;
+  color: #333;
+  font-family: "Arial", sans-serif;
+}
+
+/* Header navigation style */
+header {
+  background-color: #fff;
+  border-bottom: 1px solid #ccc;
+  padding: 10px 20px;
+}
+
+nav ul {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+nav ul li {
+  padding: 10px 20px;
+  color: #333;
+  font-size: 16px;
+}
+
+nav ul li:hover {
+  background-color: #cc2936;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+}
+
+/* Event grid and card styles */
+.event-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding: 20px;
+  margin: auto;
+  max-width: 1200px;
+}
+
+.event-container {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.event-container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.event img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.event-info {
+  padding: 10px;
+  background-color: rgba(255, 255, 255, 0.9);
+  color: #333;
+  text-align: center;
+}
+
+.event-name,
+.event-date {
+  display: block;
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.event-name {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.event-date {
+  font-size: 14px;
+}
+
+/* Footer style */
+footer {
+  width: 100%;
+  padding: 20px 10px;
+  background-color: #f8f9fa;  
+  color: #333;              
+  text-align: center;
+  border-top: 1px solid #e7e7e7; 
+  position: relative;  
+}
+
+
+/* Additional styles for log in page */
+.login-container {
+  width: 100%;
+  max-width: 350px;
+  margin: 50px auto;
+  text-align: center;
+}
+
+.login-container h1 {
+  color: #333;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.login-form {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group input {
+  width: calc(100% - 16px);
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.login-button {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 4px;
+  margin-top: 10px;
+  background-color: #cc2936;
+}
+
+.login-button {
+  background-color: #cc2936;
+}
+
+.login-button:hover {
+  background-color: #cc2936;
+}
+
+/* Sign Up page matching login form style */
+.signup-container {
+  width: 100%;
+  max-width: 350px;
+  margin: 50px auto;
+  text-align: center;
+}
+
+.signup-container h1 {
+  color: #333;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.signup-form {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.signup-form .form-group {
+  margin-bottom: 15px;
+}
+
+.signup-form .form-group input {
+  width: calc(100% - 16px);
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.signup-button {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 4px;
+  margin-top: 10px;
+  background-color: #cc2936;
+}
+
+.signup-button:hover {
+  background-color: #cc2936;
+}
+
+/* Modify toggle link */
+#toggleText {
+  cursor: pointer;
+  color: blue;
+}
+
+/* Make toggle text a clickable link */
+#toggleText {
+  font-size: 14px;
+  color: #007bff;
+  text-decoration: underline;
+}
+
+#toggleText:hover {
+  color: #0056b3;
+}
+
+.create-event-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  width: 50%;
+  margin: 0 auto;
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+}
+
+.create-event-form label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #333;
+  width: 100%;
+}
+
+.create-event-form input,
+.create-event-form select,
+.create-event-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.create-event-form button {
+  width: auto;
+  padding: 12px 25px;
+  background-color: #cc2936;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.create-event-form button:hover {
+  background-color: #bb2920;
+}
+
+/* Specific styles for the About page */
+.logo-container {
+  position: relative;
+  margin-bottom: 20px;
+  padding-left: 20px;
+}
+
+.about-section {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  line-height: 1.6;
+  background-color: #ffffff;
+}
+
+.about-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.about-mission,
+.about-offer,
+.about-join {
+  margin-bottom: 40px;
+}
+
+.about-mission h1,
+.about-offer h1,
+.about-join h1 {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.about-mission p,
+.about-offer ul,
+.about-join p {
+  text-align: left;
+  padding: 0 10px;
+}
+
+.about-offer ul li {
+  list-style-type: disc;
+  margin-left: 20px;
+  padding: 5px 0;
+}
+
+/* Styles for Event Created Successfully page */
+.event-success-container {
+  width: 90%;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.event-success-body {
+  font-family: "Arial", sans-serif;
+  text-align: center;
+  padding-top: 50px;
+  color: #333;
+  margin: 0;
+}
+
+.event-success-header {
+  font-size: 2em;
+  margin-bottom: 30px;
+}
+
+.event-success-text {
+  font-size: 1.2em;
+  margin-bottom: 30px;
+}
+
+.event-success-button {
+  font-size: 1em;
+  padding: 10px 20px;
+  background-color: #cc2936;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-bottom: 30px;
+}
+
+.event-success-button:hover {
+  background-color: #bb2920;
+}
+
+#map {
+  height: 300px;
+  width: 50%;
+  float: left;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.annual-career-fair-container,
+.board-game-night-container,
+.code-hackathon-container,
+.cultural-festival-container,
+.hiking-adventure-container,
+.innovators-meetup-container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.annual-career-fair-title,
+.board-game-night-title,
+.code-hackathon-title,
+.cultural-festival-title,
+.hiking-adventure-title,
+.innovators-meetup-title {
+  font-size: 24px;
+  color: #333;
+  margin: 20px 0;
+  text-align: center;
+  background-color: #fff;
+  line-height: 2;
+  margin-bottom: 2px;
+}
+
+.annual-career-fair-event-info,
+.board-game-night-event-info,
+.code-hackathon-event-info,
+.cultural-festival-event-info,
+.hiking-adventure-event-info,
+.innovators-meetup-event-info {
+  background-color: #fff;
+  padding: 20px;
+  margin-bottom: 20px;
+  text-align: justify;
+}
+
+.annual-career-fair-join-button,
+.code-hackathon-join-button,
+.cultural-festival-join-button,
+.hiking-adventure-join-button,
+.innovators-meetup-join-button {
+  background-color: red;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  display: inline-block;
+  margin-bottom: 20px;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.board-game-night-buy-ticket-button {
+  background-color: red;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  display: inline-block;
+  margin-bottom: 20px;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.annual-career-fair-join-button:hover,
+.code-hackathon-join-button:hover,
+.cultural-festival-join-button:hover,
+.hiking-adventure-join-button:hover,
+.innovators-meetup-join-button:hover {
+  background-color: darkred;
+  text-align: center;
+}
+
+.board-game-night-buy-ticket-button:hover {
+  background-color: darkred;
+  text-align: center;
+}
+
+.annual-career-fair-event-info p,
+.board-game-night-event-info p,
+.code-hackathon-event-info p,
+.cultural-festival-event-info p,
+.hiking-adventure-event-info p,
+.innovators-meetup-event-info p {
+  line-height: 2;
+  text-align: left;
+}
+
+.board-game-night-ul {
+  background-color: #fff;
+  padding: 20px;
+  margin-bottom: 20px;
+  text-align: justify;
+  line-height: 1.5;
+}
+
+.board-game-night-ul li{
+  background-color: #fff;
+  padding: 20px;
+  margin-bottom: 20px;
+  text-align: justify;
+  line-height: 0.01;
+}
+
+.search-form input[type="text"] {
+  margin-right: 10px;
+  height: 20px;
+  border-radius: 10px 0 0 10px;
+}
+
+.search-form button {
+  background-color: #f8f8f8;
+  border: 1px solid #ccc;
+  padding: 3px 8px;
+  border-radius: 0 10px 10px 0;
+}
+
+.search-form {
+  display: inline-block;
+}
+
+/* Enhancements for Contact Us form */
+.contact_us main {
+  padding: 40px;
+  max-width: 800px;
+  margin: auto;
+  background: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+}
+
+.contact_us form {
+  display: grid;
+  grid-gap: 20px;
+  padding: 20px;
+}
+
+.contact_us input[type="text"],
+input[type="email"],
+textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  transition: border-color 0.3s;
+}
+
+.contact_us input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+  border-color: #0056b3;
+  outline: none;
+}
+
+.contact_us button[type="submit"] {
+  width: 100%;
+  padding: 15px 0;
+  font-size: 18px;
+  background-color: #cc2936;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.contact_us button[type="submit"]:hover {
+  background-color: #bb2920;
+}
+
+.contact_us h1,
+p {
+  color: #333;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.index h2 {
+  padding: 20px;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown .dropbtn {
+  background: #cc2936;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.update h1 {
+  text-align: center;
+}
+
+.update table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.update th,
+td {
+  text-align: left;
+  padding: 12px;
+  border-bottom: 1px solid #ccc;
+}
+
+.update th {
+  background-color: #ccc;
+  color: #333;
+}
+
+.update button {
+  background-color: #cc2936;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.update button:hover {
+  background-color: #cc2936;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.24), 0 4px 6px 0 rgba(0, 0, 0, 0.19);
+}
+
+.updatepage body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+  margin: 0;
+  padding: 20px;
+}
+
+.updatepage main {
+  background-color: white;
+  padding: 20px;
+  margin-top: 20px;
+  margin: 20px auto;
+  width: 80%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.updatepage input[type="text"],
+select,
+input[type="date"],
+input[type="time"] {
+  width: 100%;
+  padding: 8px;
+  margin-top: 8px;
+  margin-bottom: 16px;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.updatepage button {
+  width: 100%;
+  background-color: #cc2936;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.updatepage button:hover {
+  background-color: #cc2936;
+}
+
+.updatepage label {
+  margin-bottom: 10px;
+  display: block;
+}
+
+.updatepage h1 {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.update h1 {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.updatepage form {
+  background-color: #fff;
+  padding: 20px;
+  margin: 20px auto;
+  width: 50%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Main Form Section */
+.create-ticket-container {
+  width: 100%;
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 30px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.create-ticket-container h1 {
+  font-size: 2em;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.create-ticket-container form {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Label and Input Fields */
+.create-ticket-container label {
+  font-size: 1.1em;
+  margin-bottom: 10px;
+  color: #555;
+}
+
+.create-ticket-container input {
+  padding: 12px;
+  margin-bottom: 20px;
+  font-size: 1em;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.create-ticket-container input[readonly] {
+  background-color: #f4f4f4; /* Light background for readonly fields */
+  cursor: not-allowed;
+}
+
+.create-ticket-container input:focus {
+  border-color: #cc2936;
+  outline: none;
+}
+
+/* Submit Button */
+.create-ticket-container button {
+  padding: 12px 25px;
+  background-color: #cc2936;
+  color: white;
+  font-size: 1.2em;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.create-ticket-container button:hover {
+  background-color: #cc2936;
+  transform: translateY(-3px);
+}
+
+.create-ticket-container button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.board-game-night-event-info .label, 
+.hiking-adventure-event-info .label,
+.innovators-meetup-event-info .label,
+.code-hackathon-event-info .label,
+.annual-career-fair-event-info .label,
+.cultural-festival-event-info .label {
+  font-weight: bold;
+  margin-top: 20px;
+  margin-bottom: 0;
+}
+
+.board-game-night-event-info p, 
+.hiking-adventure-event-info p, 
+.innovators-meetup-event-info p,
+.code-hackathon-event-info p,
+.annual-career-fair-event-info p,
+.cultural-festival-event-info p {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.updatecontainer {
+  width: 80%;
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  background-color: #ffffff;
+  border-radius: 8px;
+}
+
+.updatecontainer h1 {
+  text-align: center;
+  color: #333333;
+  font-size: 24px;
+  margin-bottom: 30px;
+}
+
+.updatecontainer form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.updatecontainer input[type="text"], button {
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+.updatecontainer button {
+  background-color: #cc2936;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.updatecontainer button:hover {
+  background-color: #bb2920;
+}
+
+.search-form input[type="text"] {
+  padding: 8px;
+  width: 200px;  
+  border: none;
+  border-radius: 4px;
+}
+
+.search-form button {
+  padding: 8px 16px;
+  background-color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+.search-form button:hover {
+  background-color: #B71C1C;
+  color: white;
+}
+
+#no-results {
+  display: none; 
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+  .create-event-form {
+    grid-template-columns: 1fr;
+  }
+}

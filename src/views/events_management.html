@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Events</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <header>
+        <a href="/"><img src="/images/logo.png" alt="NUEventHub Logo" class="logo"></a>
+    </header>
+    <main class="update">
+        <h1>Manage Your Events</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Event</th>
+                    <th>Date</th>
+                    <th>Tickets</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Board Game Night</td>
+                    <td>December 14, 2024</td>
+                    <td>$5</td>
+                    <td>On Sale</td>
+                    <td>
+                        <div class="dropdown">
+                            <button class="dropbtn">...</button>
+                            <div class="dropdown-content">
+                                <a href="/board-game-night.html">View</a>
+                                <a href="/update-board-game-night">Update</a>
+                                <a href="/update_tickets">Manage Tickets</a>
+                                <a href="#" onclick="confirmDelete(); return false;">Delete</a>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Hiking Adventure</td>
+                    <td>December 28, 2024</td>
+                    <td>Free</td>
+                    <td>Open</td>
+                    <td>
+                        <div class="dropdown">
+                            <button class="dropbtn">...</button>
+                            <div class="dropdown-content">
+                                <a href="/hiking-adventure.html">View</a>
+                                <a href="/update-hiking-adventure">Update</a>
+                                <a href="/update_tickets">Manage Tickets</a>
+                                <a href="#" onclick="confirmDelete(); return false;">Delete</a>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+            
+        </table>
+    </main>
+    <footer>
+        <p>© 2024 NU Event Hub</p>
+    </footer>
+    <script>
+        function confirmDelete() {
+            if (confirm('Are you sure you want to delete this event?')) {
+                window.location.href = '/delete-board-game-night';
+            }
+        }
+    </script> 
+</body>
+</html>

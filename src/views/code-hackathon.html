@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NU Code Hackathon</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <script>
+        function initMap() {
+            var map = new google.maps.Map(document.getElementById('map'), {
+                center: {lat: 37.77893, lng: -122.18164},  
+                zoom: 15
+            });
+            var bounds = new google.maps.LatLngBounds();
+            var marker = new google.maps.Marker({
+                position: {lat: 37.77893, lng: -122.18164},  
+                map: map
+            });
+            bounds.extend(marker.position);
+            map.fitBounds(bounds); 
+        }
+    </script> 
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAx4Q0NlE1RzHpPRnZ-pB_ZUOfojnEVtnw&callback=initMap"></script>  
+</head>
+<body>
+    <div class="logo-container">
+        <a href="/">
+            <img src="/images/logo.png" alt="NUEventHub Logo" class="logo">
+        </a>
+    </div>    
+        <h1 class="code-hackathon-title">NU Code Hackathon</h1>
+        <div class="code-hackathon-container">
+            <div class="code-hackathon-event-info">
+                <p class="label">Created by:</p>
+                <p>Northeastern University Khoury College of Computer Sciences</p>
+                <p class="label">Location:</p>
+                <p>Carnegie Hall, Northeastern University Oakland Campus, 5000 MacArthur Blvd, Oakland, CA 94613</p>
+                <p class="label">Date:</p>
+                <p>Saturday, February 15, 2025</p>
+                <p class="label">Time:</p>
+                <p>9:00 AM - 3:00 PM</p>
+                <p class="label">Description:</p>
+                <p>Join the exhilarating NU Code Hackathon at Northeastern University's Tech Lab on February 15, 2025. This 30-hour coding marathon, hosted by Khoury College of Computer Sciences, invites participants to develop innovative software solutions to real-world challenges. Gain invaluable experience through workshops, mentorship, and collaboration with tech enthusiasts. Compete for prizes in creativity and technological innovation. Whether you're a novice or an expert coder, this event promises intense coding, learning, and networking opportunities. Come, code, and possibly win!</p>
+                <button class="code-hackathon-join-button">Join</button>
+        </div>
+        <div id="map"></div>
+    </div>
+</body>
+</html>
+

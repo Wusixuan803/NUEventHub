@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Northeastern Cultural Festival 2025</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <script>
+        function initMap() {
+            var map = new google.maps.Map(document.getElementById('map'), {
+                center: {lat: 37.78111, lng: -122.18161},  
+                zoom: 15
+            });
+            var bounds = new google.maps.LatLngBounds();
+            var marker = new google.maps.Marker({
+                position: {lat: 37.78111, lng: -122.18161},  
+                map: map,
+            });
+            bounds.extend(marker.position);
+            map.fitBounds(bounds); 
+        }
+    </script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAx4Q0NlE1RzHpPRnZ-pB_ZUOfojnEVtnw&callback=initMap"></script>   
+</head>
+<body>
+    <div class="logo-container">
+        <a href="/">
+            <img src="/images/logo.png" alt="NUEventHub Logo" class="logo">
+        </a>
+    </div>    
+        <h1 class="cultural-festival-title">Northeastern Cultural Festival 2025</h1>
+        <div class="cultural-festival-container">
+            <div class="cultural-festival-event-info">
+                <p class="label">Created by:</p>
+                <p>Northeastern University Student Union</p>
+                <p class="label">Location:</p>
+                <p>Tea Shop, Northeastern University Oakland Campus, 5000 MacArthur Blvd, Oakland, CA 94613</p>
+                <p class="label">Date:</p>
+                <p>Sunday, February 23, 2025</p>
+                <p class="label">Time:</p>
+                <p>11:00 AM - 7:00 PM</p>
+                <p class="label">Description:</p>
+                <p>This lively event, hosted by the Northeastern University Student Union, showcases cultural performances, global cuisine, and art from around the world. Enjoy a day filled with music, dance, food, and interactive workshops suitable for all ages. Explore and celebrate the rich diversity of cultures at Northeastern University in this educational and fun-filled festival!</p>
+                <button class="cultural-festival-join-button">Join</button>
+        </div>
+        <div id="map"></div>
+    </div>
+</body>
+</html>
+
+

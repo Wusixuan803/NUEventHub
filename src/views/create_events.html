@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Event - NU Event Hub</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <header>
+        <a href="/"><img src="/images/logo.png" alt="NUEventHub Logo" class="logo"></a>
+    </header>
+
+    <main>
+        <form class="create-event-form" action="/create_events" method="POST" enctype="multipart/form-data">
+            <label for="eventTitle">Event Title:</label>
+            <input type="text" id="eventTitle" name="eventTitle" required>
+
+            <label for="eventType">Event Type:</label>
+            <select id="eventType" name="eventType">
+                <option value="party">Party or Social Gathering</option>
+                <option value="food">Food & Drink</option>
+                <option value="music">Music</option>
+                <option value="sports">Sports</option>
+                <option value="arts">Arts</option>
+            </select>
+
+            <label for="location">Location:</label>
+            <input type="text" id="location" name="location" required>
+
+            <label for="startDate">Start Date:</label>
+            <input type="date" id="startDate" name="startDate" required>
+
+            <label for="startTime">Start Time:</label>
+            <input type="time" id="startTime" name="startTime" required>
+
+            <label for="endDate">End Date:</label>
+            <input type="date" id="endDate" name="endDate" required>
+
+            <label for="endTime">End Time:</label>
+            <input type="time" id="endTime" name="endTime" required>
+
+            <label for="description">Description:</label>
+            <textarea id="description" name="description" required></textarea>
+
+            <label for="mainImage">Main Event Image:</label>
+            <input type="file" id="mainImage" name="mainImage" accept="image/*">
+
+            <button type="submit">Create Event</button>
+        </form>
+    </main>
+
+    <footer>
+        <p>NU Event Hub © 2024</p>
+    </footer>
+</body>
+</html>

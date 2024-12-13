@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Create Ticket - NU Event Hub</title>
+    <link rel="stylesheet" href="/css/styles.css" />
+    <script>
+      window.onload = function () {
+        const form = document.querySelector(".create-ticket-form");
+        form.onsubmit = async function (event) {
+          event.preventDefault(); // Prevent default form submission
+
+          const quantity = document.getElementById("quantity").value;
+          const price = document.getElementById("price").value;
+          const currency = document.getElementById("currency").value;
+
+          // Send form data via POST request
+          const response = await fetch("/api/tickets/create", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+              quantity: quantity,
+              price: price,
+              currency: currency,
+            }),
+          });
+
+          // Parse the JSON response from the backend
+          const data = await response.json();
+
+          if (data.success) {
+            // Create and display the success message
+            const message = document.createElement("div");
+            message.style.backgroundColor = "#4CAF50";
+            message.style.color = "white";
+            message.style.padding = "20px";
+            message.style.textAlign = "center";
+            message.innerHTML = data.message; // Show success message from backend
+            document.body.appendChild(message);
+
+            // Optionally, set a 3-second delay to hide the message
+            setTimeout(function () {
+              message.style.display = "none"; // Hide the success message
+            }, 3000); // 3-second delay
+          } else {
+            // Handle error (if any)
+            alert("There was an error creating the ticket.");
+          }
+        };
+      };
+    </script>
+  </head>
+  <body class="create-ticket-body">
+    <header>
+      <a href="/">
+        <img src="/images/logo.png" alt="NUEventHub Logo" class="logo" />
+      </a>
+    </header>
+
+    <main class="create-ticket-container">
+      <h1>Create Ticket for Your Event</h1>
+      <form class="create-ticket-form">
+        <!-- Quantity -->
+        <label for="quantity">Quantity:</label>
+        <input
+          type="number"
+          id="quantity"
+          name="quantity"
+          required
+          min="1"
+          placeholder="Enter quantity"
+        />
+
+        <!-- Price -->
+        <label for="price">Price:</label>
+        <input
+          type="text"
+          id="price"
+          name="price"
+          required
+          placeholder="Enter price"
+        />
+
+        <!-- Currency - Fixed to USD -->
+        <label for="currency">Currency:</label>
+        <input type="text" id="currency" name="currency" value="USD" readonly />
+
+        <!-- Submit Button -->
+        <button type="submit">Create Ticket</button>
+      </form>
+    </main>
+
+    <footer>
+      <p>NU Event Hub © 2024</p>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Board Game Night</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <script>
+        function initMap() {
+            var map = new google.maps.Map(document.getElementById('map'), {
+                center: {lat: 37.67788, lng: -122.08460},  
+                zoom: 15
+            });
+            var bounds = new google.maps.LatLngBounds();
+            var marker = new google.maps.Marker({
+                position: {lat: 37.67788, lng: -122.08460},  
+                map: map,
+            });
+            bounds.extend(marker.position);
+            map.fitBounds(bounds); 
+        }
+    </script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAx4Q0NlE1RzHpPRnZ-pB_ZUOfojnEVtnw&callback=initMap"></script>  
+    <script src="https://www.paypal.com/sdk/js?client-id=AVeWCxaYOH490OxvqCBQGORu6-R_Df8cB7WW9DU3HKyRK-WI3C1Jc6OQMCEPwp-SViPffnhIPr16wrVU"></script>
+    
+</head>
+<body>
+    <div class="logo-container">
+        <a href="/">
+            <img src="/images/logo.png" alt="NUEventHub Logo" class="logo">
+        </a>
+    </div>    
+        <h1 class="board-game-night-title">Board Game Night</h1>
+        <div class="board-game-night-container">
+            <div class="board-game-night-event-info">
+              <p class="label">Created by:</p>
+              <p>Jade Ye</p>
+              <p class="label">Location:</p>
+              <p>Lincoln Landing, 22335 Foothill Blvd, Hayward, CA 94541</p>
+              <p class="label">Date:</p>
+              <p>Saturday, December 14, 2024</p>
+              <p class="label">Time:</p>
+              <p>14:00 PM - 19:00 PM</p>
+              <p class="label">Description:</p>
+              <p>Experience an enjoyable evening at our premium Board Game Night! This paid event offers a fantastic opportunity to unwind and socialize in a friendly setting:</p>
+              <ul class="board-game-night-ul">
+                  <li>Engaging Games: Dive into a variety of board games suitable for all skill levels.</li>
+                  <li>Quality Refreshments: Enjoy a selection of beverages and delicious foods in a comfortable, cozy environment.</li>
+                  <li>Networking Opportunities: Meet and connect with new people in a relaxed and playful atmosphere.</li>
+              </ul>
+              <p>Entry fee is $5. Don't miss out on this chance to relax, play, and make new friends!</p>
+                <button class="board-game-night-buy-ticket-button" id="buyTicketBtn">Buy Ticket</button>
+                <div id="paypal-button-container"></div>
+            </div>
+        <div id="map"></div>
+    </div>
+    <script>
+        document.getElementById('buyTicketBtn').addEventListener('click', function() {
+          paypal.Buttons({
+            createOrder: function(data, actions) {
+              return actions.order.create({
+                purchase_units: [{
+                  amount: {
+                    value: '5.00'
+                  }
+                }]
+              });
+            },
+            onApprove: function(data, actions) {
+              return actions.order.capture().then(function(details) {
+                alert('Payment Successfully!');
+              });
+            }
+          }).render('#paypal-button-container');
+        });
+    </script>    
+</body>
+</html>
+
+
+

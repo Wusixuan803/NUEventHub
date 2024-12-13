@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hiking Adventure</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <script>
+        function initMap() {
+            var map = new google.maps.Map(document.getElementById('map'), {
+                center: {lat: 37.61778, lng: -122.01378},  
+                zoom: 15
+            });
+            var bounds = new google.maps.LatLngBounds();
+            var marker = new google.maps.Marker({
+                position: {lat: 37.61778, lng: -122.01378},  
+                map: map,
+            });
+            bounds.extend(marker.position);
+            map.fitBounds(bounds); 
+        }
+    </script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAx4Q0NlE1RzHpPRnZ-pB_ZUOfojnEVtnw&callback=initMap"></script>   
+</head>
+<body>
+    <div class="logo-container">
+        <a href="/">
+            <img src="/images/logo.png" alt="NUEventHub Logo" class="logo">
+        </a>
+    </div>    
+        <h1 class="hiking-adventure-title">Hiking Adventure</h1>
+        <div class="hiking-adventure-container">
+            <div class="hiking-adventure-event-info">
+                <p class="label">Created by:</p>
+                <p>Dolores Dong</p>
+                <p class="label">Location:</p>
+                <p>Peak and Dry Creek Trail Loop, 550 May Rd, Union City, CA 94587</p>
+                <p class="label">Date:</p>
+                <p>Saturday, December 28, 2024</p>
+                <p class="label">Time:</p>
+                <p>10:00 AM - 3:00 PM</p>
+                <p class="label">Description:</p>
+                <p>Experience this 2.2-mile loop trail near Hayward, California. Generally considered an easy route, it takes an average of 55 min to complete. This is a popular trail for hiking, but you can still enjoy some solitude during quieter times of day. The trail is open year-round and is beautiful to visit anytime. Dogs are welcome and may be off-leash in some areas.</p>
+                <button class="hiking-adventure-join-button">Join</button>
+            </div>
+        <div id="map"></div>
+    </div>
+</body>
+</html>
+
+
